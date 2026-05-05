@@ -14,11 +14,11 @@ interface StatsCardProps {
 }
 
 const colorMap = {
-  purple: { bg: 'rgba(124,58,237,0.12)', icon: '#a78bfa', border: 'rgba(124,58,237,0.25)', glow: 'rgba(124,58,237,0.2)' },
-  green: { bg: 'rgba(34,197,94,0.12)', icon: '#4ade80', border: 'rgba(34,197,94,0.25)', glow: 'rgba(34,197,94,0.2)' },
-  yellow: { bg: 'rgba(245,158,11,0.12)', icon: '#fbbf24', border: 'rgba(245,158,11,0.25)', glow: 'rgba(245,158,11,0.2)' },
-  red: { bg: 'rgba(239,68,68,0.12)', icon: '#f87171', border: 'rgba(239,68,68,0.25)', glow: 'rgba(239,68,68,0.2)' },
-  blue: { bg: 'rgba(59,130,246,0.12)', icon: '#60a5fa', border: 'rgba(59,130,246,0.25)', glow: 'rgba(59,130,246,0.2)' },
+  purple: { bg: '#f5f3ff', icon: '#6d28d9', border: '#ddd6fe' },
+  green: { bg: '#f0fdf4', icon: '#15803d', border: '#bbf7d0' },
+  yellow: { bg: '#fffbeb', icon: '#b45309', border: '#fde68a' },
+  red: { bg: '#fef2f2', icon: '#b91c1c', border: '#fecaca' },
+  blue: { bg: '#eff6ff', icon: '#1d4ed8', border: '#bfdbfe' },
 }
 
 export default function StatsCard({
@@ -59,26 +59,13 @@ export default function StatsCard({
         cursor: 'default',
       }}
     >
-      {/* Background glow */}
-      <div style={{
-        position: 'absolute',
-        top: -20,
-        right: -20,
-        width: 100,
-        height: 100,
-        borderRadius: '50%',
-        background: colors.glow,
-        filter: 'blur(30px)',
-        pointerEvents: 'none',
-      }} />
-
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', position: 'relative' }}>
         <div>
           <p style={{ fontSize: 13, color: 'var(--text-secondary)', fontWeight: 500, marginBottom: 8 }}>
             {title}
           </p>
           <div style={{ display: 'flex', alignItems: 'baseline', gap: 4 }}>
-            <h2 style={{ fontSize: 36, fontWeight: 800, color: 'var(--text-primary)', lineHeight: 1 }}>
+            <h2 style={{ fontSize: 32, fontWeight: 700, color: 'var(--text-primary)', lineHeight: 1 }}>
               {typeof value === 'number' ? displayValue : value}
             </h2>
             {suffix && (
@@ -96,8 +83,8 @@ export default function StatsCard({
               marginTop: 8,
               fontSize: 12,
               fontWeight: 600,
-              color: trend >= 0 ? '#4ade80' : '#f87171',
-              background: trend >= 0 ? 'rgba(34,197,94,0.1)' : 'rgba(239,68,68,0.1)',
+              color: trend >= 0 ? '#15803d' : '#b91c1c',
+              background: trend >= 0 ? '#f0fdf4' : '#fef2f2',
               padding: '2px 8px',
               borderRadius: 100,
             }}>

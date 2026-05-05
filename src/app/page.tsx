@@ -81,9 +81,9 @@ export default function DashboardPage() {
         {/* Header */}
         <div style={{
           padding: '32px 40px 0',
-          borderBottom: '1px solid var(--border-subtle)',
+          borderBottom: '1px solid var(--border-default)',
           paddingBottom: 24,
-          background: 'linear-gradient(180deg, rgba(124,58,237,0.05) 0%, transparent 100%)',
+          background: '#ffffff',
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
             <div>
@@ -207,7 +207,7 @@ export default function DashboardPage() {
                           <span style={{ color: 'var(--text-secondary)' }}>{item.label}</span>
                           <span style={{ fontWeight: 700, color: item.color }}>{item.value}</span>
                         </div>
-                        <div style={{ height: 4, borderRadius: 2, background: 'rgba(255,255,255,0.06)', overflow: 'hidden' }}>
+                        <div style={{ height: 4, borderRadius: 2, background: '#f3f4f6', overflow: 'hidden' }}>
                           <div style={{ height: '100%', width: `${item.pct}%`, background: item.color, borderRadius: 2, transition: 'width 1s ease' }} />
                         </div>
                       </div>
@@ -231,8 +231,8 @@ export default function DashboardPage() {
                           borderRadius: 8,
                           border: '1px solid var(--border-subtle)',
                         }}>
-                          <div style={{ width: 32, height: 32, borderRadius: 8, background: 'rgba(124,58,237,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            <Briefcase size={14} color="#a78bfa" />
+                          <div style={{ width: 32, height: 32, borderRadius: 8, background: '#eff6ff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            <Briefcase size={14} color="var(--accent-primary)" />
                           </div>
                           <div>
                             <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--text-primary)' }}>{job.title}</div>
@@ -248,8 +248,8 @@ export default function DashboardPage() {
 
                   {/* AI Agent CTA */}
                   <div style={{
-                    background: 'linear-gradient(135deg, rgba(124,58,237,0.2), rgba(59,130,246,0.1))',
-                    border: '1px solid rgba(124,58,237,0.3)',
+                    background: '#eff6ff',
+                    border: '1px solid #bfdbfe',
                     borderRadius: 16,
                     padding: 20,
                   }}>

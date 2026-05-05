@@ -136,9 +136,9 @@ export default function CandidatesPage() {
                 style={{
                   padding: '6px 14px',
                   borderRadius: 100,
-                  border: filter === s ? '1px solid rgba(124,58,237,0.4)' : '1px solid var(--border-subtle)',
-                  background: filter === s ? 'rgba(124,58,237,0.15)' : 'var(--bg-card)',
-                  color: filter === s ? '#a78bfa' : 'var(--text-secondary)',
+                  border: filter === s ? '1px solid #bfdbfe' : '1px solid var(--border-default)',
+                  background: filter === s ? '#eff6ff' : 'var(--bg-card)',
+                  color: filter === s ? 'var(--accent-primary)' : 'var(--text-secondary)',
                   fontSize: 13,
                   fontWeight: 600,
                   cursor: 'pointer',
@@ -151,11 +151,11 @@ export default function CandidatesPage() {
               >
                 {statusLabels[s]}
                 <span style={{
-                  background: filter === s ? 'rgba(124,58,237,0.3)' : 'rgba(255,255,255,0.08)',
+                  background: filter === s ? '#dbeafe' : '#f3f4f6',
                   padding: '1px 7px',
                   borderRadius: 100,
                   fontSize: 11,
-                  color: filter === s ? '#c4b5fd' : 'var(--text-muted)',
+                  color: filter === s ? '#1d4ed8' : 'var(--text-muted)',
                 }}>
                   {countByStatus(s)}
                 </span>

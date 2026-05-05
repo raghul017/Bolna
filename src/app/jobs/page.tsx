@@ -88,11 +88,11 @@ export default function JobsPage() {
                     <div style={{ display: 'flex', gap: 14, marginBottom: 16 }}>
                       <div style={{
                         width: 48, height: 48, borderRadius: 12,
-                        background: 'linear-gradient(135deg, rgba(124,58,237,0.2), rgba(139,92,246,0.1))',
-                        border: '1px solid rgba(124,58,237,0.3)',
+                        background: '#eff6ff',
+                        border: '1px solid #bfdbfe',
                         display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
                       }}>
-                        <Briefcase size={20} color="#a78bfa" />
+                        <Briefcase size={20} color="var(--accent-primary)" />
                       </div>
                       <div>
                         <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 3 }}>{job.title}</h3>
@@ -110,12 +110,12 @@ export default function JobsPage() {
                     {/* Stats */}
                     <div style={{ display: 'flex', gap: 16, marginBottom: 16 }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, color: 'var(--text-secondary)' }}>
-                        <Users size={13} color="#a78bfa" />
+                        <Users size={13} color="var(--accent-primary)" />
                         <span>{job._count.candidates} candidates</span>
                       </div>
                       {job.minSalary > 0 && (
                         <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, color: 'var(--text-secondary)' }}>
-                          <DollarSign size={13} color="#4ade80" />
+                          <DollarSign size={13} color="#16a34a" />
                           <span>${(job.minSalary / 1000).toFixed(0)}k–${(job.maxSalary / 1000).toFixed(0)}k</span>
                         </div>
                       )}

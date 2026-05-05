@@ -44,11 +44,11 @@ interface Candidate {
 }
 
 const statusConfig: Record<string, { label: string; color: string; bg: string; border: string }> = {
-  PENDING: { label: 'Pending Screen', color: '#9898b0', bg: 'rgba(255,255,255,0.05)', border: 'rgba(255,255,255,0.1)' },
-  CALLING: { label: 'Calling…', color: '#60a5fa', bg: 'rgba(59,130,246,0.1)', border: 'rgba(59,130,246,0.3)' },
-  COMPLETED: { label: 'Under Review', color: '#fbbf24', bg: 'rgba(245,158,11,0.1)', border: 'rgba(245,158,11,0.3)' },
-  SHORTLISTED: { label: 'Shortlisted ✓', color: '#4ade80', bg: 'rgba(34,197,94,0.1)', border: 'rgba(34,197,94,0.3)' },
-  REJECTED: { label: 'Rejected', color: '#f87171', bg: 'rgba(239,68,68,0.1)', border: 'rgba(239,68,68,0.3)' },
+  PENDING: { label: 'Pending Screen', color: '#6b7280', bg: '#f3f4f6', border: '#e5e7eb' },
+  CALLING: { label: 'Calling…', color: '#2563eb', bg: '#eff6ff', border: '#bfdbfe' },
+  COMPLETED: { label: 'Under Review', color: '#d97706', bg: '#fffbeb', border: '#fde68a' },
+  SHORTLISTED: { label: 'Shortlisted ✓', color: '#16a34a', bg: '#f0fdf4', border: '#bbf7d0' },
+  REJECTED: { label: 'Rejected', color: '#dc2626', bg: '#fef2f2', border: '#fecaca' },
 }
 
 function ScoreBar({ label, value, max }: { label: string; value: number; max: number }) {
@@ -61,14 +61,13 @@ function ScoreBar({ label, value, max }: { label: string; value: number; max: nu
         <span style={{ color: 'var(--text-secondary)' }}>{label}</span>
         <span style={{ fontWeight: 700, color }}>{value}/{max}</span>
       </div>
-      <div style={{ height: 6, borderRadius: 3, background: 'rgba(255,255,255,0.06)' }}>
+      <div style={{ height: 6, borderRadius: 3, background: '#f3f4f6' }}>
         <div style={{
           height: '100%',
           width: `${pct}%`,
-          background: `linear-gradient(90deg, ${color}99, ${color})`,
+          background: color,
           borderRadius: 3,
           transition: 'width 1s ease',
-          boxShadow: `0 0 8px ${color}50`,
         }} />
       </div>
     </div>
@@ -298,7 +297,7 @@ export default function CandidateDetailPage() {
                     return (
                       <div key={i} style={{
                         marginBottom: 4,
-                        color: isAria ? '#a78bfa' : isSpeaker ? '#60a5fa' : 'var(--text-secondary)',
+                        color: isAria ? 'var(--accent-primary)' : isSpeaker ? '#4b5563' : 'var(--text-secondary)',
                         paddingLeft: isSpeaker ? 0 : 16,
                       }}>
                         {line}
@@ -320,9 +319,8 @@ export default function CandidateDetailPage() {
                   <div style={{
                     fontSize: 56,
                     fontWeight: 900,
-                    color: candidate.score >= 80 ? '#22c55e' : candidate.score >= 60 ? '#f59e0b' : '#ef4444',
+                    color: candidate.score >= 80 ? '#16a34a' : candidate.score >= 60 ? '#d97706' : '#dc2626',
                     lineHeight: 1,
-                    textShadow: `0 0 40px ${candidate.score >= 80 ? 'rgba(34,197,94,0.4)' : candidate.score >= 60 ? 'rgba(245,158,11,0.4)' : 'rgba(239,68,68,0.4)'}`,
                   }}>
                     {candidate.score}
                   </div>
@@ -338,9 +336,9 @@ export default function CandidateDetailPage() {
                   fontSize: 13,
                   fontWeight: 700,
                   marginBottom: 20,
-                  background: candidate.score >= 80 ? 'rgba(34,197,94,0.1)' : candidate.score >= 60 ? 'rgba(245,158,11,0.1)' : 'rgba(239,68,68,0.1)',
-                  color: candidate.score >= 80 ? '#4ade80' : candidate.score >= 60 ? '#fbbf24' : '#f87171',
-                  border: `1px solid ${candidate.score >= 80 ? 'rgba(34,197,94,0.3)' : candidate.score >= 60 ? 'rgba(245,158,11,0.3)' : 'rgba(239,68,68,0.3)'}`,
+                  background: candidate.score >= 80 ? '#f0fdf4' : candidate.score >= 60 ? '#fffbeb' : '#fef2f2',
+                  color: candidate.score >= 80 ? '#16a34a' : candidate.score >= 60 ? '#d97706' : '#dc2626',
+                  border: `1px solid ${candidate.score >= 80 ? '#bbf7d0' : candidate.score >= 60 ? '#fde68a' : '#fecaca'}`,
                 }}>
                   <Star size={13} fill="currentColor" />
                   {candidate.score >= 80 ? 'Excellent Candidate' : candidate.score >= 60 ? 'Good Candidate' : 'Below Threshold'}
@@ -429,8 +427,8 @@ export default function CandidateDetailPage() {
             {/* No screening yet CTA */}
             {!candidate.transcript && candidate.status === 'PENDING' && (
               <div style={{
-                background: 'linear-gradient(135deg, rgba(124,58,237,0.15), rgba(59,130,246,0.08))',
-                border: '1px solid rgba(124,58,237,0.3)',
+                background: '#eff6ff',
+                border: '1px solid #bfdbfe',
                 borderRadius: 16,
                 padding: 24,
                 textAlign: 'center',

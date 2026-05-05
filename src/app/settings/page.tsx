@@ -60,8 +60,8 @@ export default function SettingsPage() {
           {/* API Config */}
           <div className="card">
             <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginBottom: 20 }}>
-              <div style={{ width: 40, height: 40, borderRadius: 10, background: 'rgba(124,58,237,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Key size={18} color="#a78bfa" />
+              <div style={{ width: 40, height: 40, borderRadius: 10, background: '#f5f3ff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Key size={18} color="#6d28d9" />
               </div>
               <div>
                 <h2 style={{ fontSize: 16, fontWeight: 700 }}>Bolna API Configuration</h2>
@@ -99,14 +99,14 @@ export default function SettingsPage() {
               </div>
 
               <div style={{
-                background: 'rgba(59,130,246,0.08)',
-                border: '1px solid rgba(59,130,246,0.2)',
+                background: '#eff6ff',
+                border: '1px solid #bfdbfe',
                 borderRadius: 10,
                 padding: '12px 16px',
                 fontSize: 13,
-                color: '#93c5fd',
+                color: '#1d4ed8',
               }}>
-                ℹ️ To apply these, add them to your <code style={{ background: 'rgba(255,255,255,0.08)', padding: '1px 6px', borderRadius: 4 }}>.env</code> file as <code style={{ background: 'rgba(255,255,255,0.08)', padding: '1px 6px', borderRadius: 4 }}>BOLNA_API_KEY</code> and <code style={{ background: 'rgba(255,255,255,0.08)', padding: '1px 6px', borderRadius: 4 }}>BOLNA_AGENT_ID</code>, then restart the server.
+                ℹ️ To apply these, add them to your <code style={{ background: '#dbeafe', padding: '2px 6px', borderRadius: 4 }}>.env</code> file as <code style={{ background: '#dbeafe', padding: '2px 6px', borderRadius: 4 }}>BOLNA_API_KEY</code> and <code style={{ background: '#dbeafe', padding: '2px 6px', borderRadius: 4 }}>BOLNA_AGENT_ID</code>, then restart the server.
               </div>
 
               <button className="btn btn-primary btn-sm" onClick={handleSave}>
@@ -118,8 +118,8 @@ export default function SettingsPage() {
           {/* Webhook Config */}
           <div className="card">
             <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginBottom: 20 }}>
-              <div style={{ width: 40, height: 40, borderRadius: 10, background: 'rgba(34,197,94,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Webhook size={18} color="#4ade80" />
+              <div style={{ width: 40, height: 40, borderRadius: 10, background: '#f0fdf4', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Webhook size={18} color="#15803d" />
               </div>
               <div>
                 <h2 style={{ fontSize: 16, fontWeight: 700 }}>Webhook URL</h2>
@@ -161,15 +161,15 @@ export default function SettingsPage() {
             </p>
 
             <div style={{
-              background: 'rgba(245,158,11,0.08)',
-              border: '1px solid rgba(245,158,11,0.2)',
+              background: '#fffbeb',
+              border: '1px solid #fde68a',
               borderRadius: 10,
               padding: '12px 16px',
               fontSize: 13,
-              color: '#fbbf24',
+              color: '#b45309',
               marginTop: 12,
             }}>
-              ⚡ <strong>Quick test:</strong> Install ngrok, run <code style={{ background: 'rgba(255,255,255,0.08)', padding: '1px 6px', borderRadius: 4 }}>ngrok http 3000</code>, and paste the HTTPS URL + <code style={{ background: 'rgba(255,255,255,0.08)', padding: '1px 6px', borderRadius: 4 }}>/api/webhooks/bolna</code> into your Bolna agent.
+              ⚡ <strong>Quick test:</strong> Install ngrok, run <code style={{ background: '#fef3c7', padding: '2px 6px', borderRadius: 4 }}>ngrok http 3000</code>, and paste the HTTPS URL + <code style={{ background: '#fef3c7', padding: '2px 6px', borderRadius: 4 }}>/api/webhooks/bolna</code> into your Bolna agent.
             </div>
           </div>
 
@@ -177,8 +177,8 @@ export default function SettingsPage() {
           <div className="card">
             <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginBottom: 20, justifyContent: 'space-between' }}>
               <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-                <div style={{ width: 40, height: 40, borderRadius: 10, background: 'rgba(124,58,237,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Bot size={18} color="#a78bfa" />
+                <div style={{ width: 40, height: 40, borderRadius: 10, background: '#f5f3ff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Bot size={18} color="#6d28d9" />
                 </div>
                 <div>
                   <h2 style={{ fontSize: 16, fontWeight: 700 }}>Agent Prompt</h2>
@@ -211,8 +211,8 @@ export default function SettingsPage() {
           {/* Integration Guide */}
           <div className="card">
             <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginBottom: 20 }}>
-              <div style={{ width: 40, height: 40, borderRadius: 10, background: 'rgba(59,130,246,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Settings size={18} color="#60a5fa" />
+              <div style={{ width: 40, height: 40, borderRadius: 10, background: '#eff6ff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Settings size={18} color="#1d4ed8" />
               </div>
               <div>
                 <h2 style={{ fontSize: 16, fontWeight: 700 }}>Integration Steps</h2>
@@ -231,10 +231,10 @@ export default function SettingsPage() {
               ].map(({ step, title, desc }) => (
                 <div key={step} style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
                   <div style={{
-                    width: 32, height: 32, borderRadius: 8, background: 'rgba(124,58,237,0.15)',
-                    border: '1px solid rgba(124,58,237,0.3)',
+                    width: 32, height: 32, borderRadius: 8, background: '#f5f3ff',
+                    border: '1px solid #ddd6fe',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontSize: 12, fontWeight: 800, color: '#a78bfa', flexShrink: 0,
+                    fontSize: 12, fontWeight: 700, color: '#6d28d9', flexShrink: 0,
                   }}>
                     {step}
                   </div>

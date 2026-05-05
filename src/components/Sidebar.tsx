@@ -29,22 +29,21 @@ export default function Sidebar() {
       <div style={{ padding: '28px 24px 20px' }}>
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
           <div style={{
-            width: 36,
-            height: 36,
-            borderRadius: 10,
-            background: 'linear-gradient(135deg, #7c3aed, #8b5cf6)',
+            width: 32,
+            height: 32,
+            borderRadius: 8,
+            background: 'var(--accent-primary)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 0 20px rgba(124,58,237,0.5)',
           }}>
-            <Zap size={18} color="white" fill="white" />
+            <Zap size={16} color="white" fill="white" />
           </div>
           <div>
-            <div style={{ fontWeight: 800, fontSize: 16, color: '#f0f0ff', lineHeight: 1.2 }}>
+            <div style={{ fontWeight: 700, fontSize: 15, color: 'var(--text-primary)', lineHeight: 1.2 }}>
               RecruitAI
             </div>
-            <div style={{ fontSize: 11, color: 'var(--text-muted)', lineHeight: 1 }}>
+            <div style={{ fontSize: 11, color: 'var(--text-secondary)', lineHeight: 1 }}>
               Powered by Bolna
             </div>
           </div>
@@ -69,21 +68,20 @@ export default function Sidebar() {
                 display: 'flex',
                 alignItems: 'center',
                 gap: 10,
-                padding: '10px 12px',
-                borderRadius: 8,
+                padding: '8px 12px',
+                borderRadius: 6,
                 marginBottom: 2,
                 textDecoration: 'none',
                 fontSize: 14,
-                fontWeight: isActive ? 600 : 500,
-                color: isActive ? '#a78bfa' : 'var(--text-secondary)',
-                background: isActive ? 'rgba(124,58,237,0.12)' : 'transparent',
-                border: isActive ? '1px solid rgba(124,58,237,0.2)' : '1px solid transparent',
+                fontWeight: 500,
+                color: isActive ? 'var(--accent-primary)' : 'var(--text-secondary)',
+                background: isActive ? '#eff6ff' : 'transparent',
                 transition: 'all 0.15s ease',
               }}
               onMouseEnter={e => {
                 if (!isActive) {
                   const el = e.currentTarget as HTMLElement
-                  el.style.background = 'rgba(255,255,255,0.04)'
+                  el.style.background = '#f3f4f6'
                   el.style.color = 'var(--text-primary)'
                 }
               }}
@@ -104,11 +102,11 @@ export default function Sidebar() {
       </nav>
 
       {/* Bottom Bolt */}
-      <div style={{ padding: '16px', margin: '16px', background: 'rgba(124,58,237,0.08)', borderRadius: 12, border: '1px solid rgba(124,58,237,0.2)' }}>
-        <div style={{ fontSize: 12, fontWeight: 600, color: '#a78bfa', marginBottom: 4 }}>
-          🤖 AI Voice Agent
+      <div style={{ padding: '16px', margin: '16px', background: '#f8fafc', borderRadius: 8, border: '1px solid #e2e8f0' }}>
+        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--accent-primary)', marginBottom: 4, display: 'flex', alignItems: 'center', gap: '4px' }}>
+          <span style={{ fontSize: '14px' }}>🤖</span> AI Voice Agent
         </div>
-        <div style={{ fontSize: 11, color: 'var(--text-muted)', lineHeight: 1.5 }}>
+        <div style={{ fontSize: 11, color: 'var(--text-secondary)', lineHeight: 1.5 }}>
           Bolna agent active. Ready to screen candidates 24/7.
         </div>
       </div>

@@ -37,7 +37,7 @@ function ScoreCircle({ score }: { score: number }) {
   return (
     <div style={{ position: 'relative', width: 44, height: 44, flexShrink: 0 }}>
       <svg width="44" height="44" viewBox="0 0 44 44">
-        <circle cx="22" cy="22" r="16" fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="3" />
+        <circle cx="22" cy="22" r="16" fill="none" stroke="#f3f4f6" strokeWidth="3" />
         <circle
           cx="22" cy="22" r="16"
           fill="none"
@@ -103,12 +103,10 @@ export default function CandidateCard({ candidate, onCallInitiated }: CandidateC
           transition: 'all 0.2s ease',
         }}
         onMouseEnter={e => {
-          (e.currentTarget as HTMLElement).style.borderColor = 'rgba(124,58,237,0.3)'
-          ;(e.currentTarget as HTMLElement).style.transform = 'translateX(2px)'
+          (e.currentTarget as HTMLElement).style.borderColor = 'var(--accent-primary)'
         }}
         onMouseLeave={e => {
-          (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.06)'
-          ;(e.currentTarget as HTMLElement).style.transform = 'translateX(0)'
+          (e.currentTarget as HTMLElement).style.borderColor = 'var(--border-default)'
         }}
       >
         {/* Avatar */}
@@ -116,14 +114,14 @@ export default function CandidateCard({ candidate, onCallInitiated }: CandidateC
           width: 44,
           height: 44,
           borderRadius: 12,
-          background: 'linear-gradient(135deg, rgba(124,58,237,0.3), rgba(139,92,246,0.2))',
-          border: '1px solid rgba(124,58,237,0.3)',
+          background: '#eff6ff',
+          border: '1px solid #bfdbfe',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           fontSize: 16,
-          fontWeight: 700,
-          color: '#a78bfa',
+          fontWeight: 600,
+          color: 'var(--accent-primary)',
           flexShrink: 0,
         }}>
           {candidate.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
@@ -136,7 +134,7 @@ export default function CandidateCard({ candidate, onCallInitiated }: CandidateC
               {candidate.name}
             </span>
             <span className={`badge ${status.className}`} style={{ flexShrink: 0 }}>
-              {isCallingNow && <span className="animate-call-pulse" style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: '#60a5fa', marginRight: 2 }} />}
+              {isCallingNow && <span className="animate-call-pulse" style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: '#2563eb', marginRight: 4 }} />}
               {status.label}
             </span>
           </div>
@@ -158,7 +156,7 @@ export default function CandidateCard({ candidate, onCallInitiated }: CandidateC
           {candidate.score !== null ? (
             <ScoreCircle score={candidate.score} />
           ) : (
-            <div style={{ width: 44, height: 44, borderRadius: '50%', background: 'rgba(255,255,255,0.04)', border: '1px dashed var(--border-default)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, color: 'var(--text-muted)' }}>
+            <div style={{ width: 44, height: 44, borderRadius: '50%', background: '#f9fafb', border: '1px dashed var(--border-hover)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, color: 'var(--text-muted)' }}>
               —
             </div>
           )}

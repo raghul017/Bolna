@@ -161,12 +161,12 @@ export default function AddCandidateModal({ jobs, onClose, onSuccess }: AddCandi
 
           {error && (
             <div style={{
-              background: 'rgba(239,68,68,0.1)',
-              border: '1px solid rgba(239,68,68,0.3)',
+              background: '#fef2f2',
+              border: '1px solid #fecaca',
               borderRadius: 8,
               padding: '10px 14px',
               fontSize: 13,
-              color: '#f87171',
+              color: '#b91c1c',
             }}>
               {error}
             </div>

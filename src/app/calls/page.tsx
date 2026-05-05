@@ -104,16 +104,16 @@ export default function CallLogsPage() {
                       transition: 'background 0.15s ease',
                       cursor: 'pointer',
                     }}
-                    onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.02)'}
+                    onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = 'var(--bg-card-hover)'}
                     onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = 'transparent'}
                     onClick={() => window.location.href = `/candidates/${c.id}`}
                   >
                     <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                       <div style={{
                         width: 32, height: 32, borderRadius: 8,
-                        background: 'rgba(124,58,237,0.15)',
+                        background: '#eff6ff',
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        fontSize: 12, fontWeight: 700, color: '#a78bfa',
+                        fontSize: 12, fontWeight: 600, color: 'var(--accent-primary)',
                       }}>
                         {c.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
                       </div>
@@ -127,7 +127,7 @@ export default function CallLogsPage() {
                       {statusIcon(c.status)}
                       <span style={{ color: 'var(--text-secondary)', fontSize: 12 }}>{c.status === 'CALLING' ? 'Live' : c.status.charAt(0) + c.status.slice(1).toLowerCase()}</span>
                     </div>
-                    <div style={{ fontSize: 14, fontWeight: 700, color: c.score ? (c.score >= 80 ? '#22c55e' : c.score >= 60 ? '#f59e0b' : '#ef4444') : 'var(--text-muted)' }}>
+                    <div style={{ fontSize: 14, fontWeight: 700, color: c.score ? (c.score >= 80 ? '#16a34a' : c.score >= 60 ? '#d97706' : '#dc2626') : 'var(--text-muted)' }}>
                       {c.score ?? '—'}
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 13, color: 'var(--text-secondary)' }}>
