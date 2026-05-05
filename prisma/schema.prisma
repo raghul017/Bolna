@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Job {
+  id          String      @id @default(cuid())
+  title       String
+  department  String
+  minSalary   Int
+  maxSalary   Int
+  skills      String      // JSON array of skill strings
+  description String      @default("")
+  isActive    Boolean     @default(true)
+  candidates  Candidate[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Candidate {
+  id           String    @id @default(cuid())
+  name         String
+  email        String
+  phone        String
+  jobId        String
+  job          Job       @relation(fields: [jobId], references: [id])
+  status       String    @default("PENDING")
+  // PENDING | CALLING | COMPLETED | SHORTLISTED | REJECTED
+  score        Int?
+  scoreBreakdown String? // JSON: { experience, availability, salary, communication }
+  transcript   String?
+  recordingUrl String?
+  callId       String?   // Bolna call ID
+  callDuration Int?      // seconds
+  answers      String?   // JSON: structured answers from call
+  notes        String?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
